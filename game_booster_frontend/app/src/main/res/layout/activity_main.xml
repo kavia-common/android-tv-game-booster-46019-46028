@@ -4,32 +4,175 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@color/tv_background">
 
-    <TextView
-        android:id="@+id/title_text"
-        android:layout_width="wrap_content"
+    <!-- Header: Stats -->
+    <LinearLayout
+        android:id="@+id/header_stats_card"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="game_booster_frontend"
-        android:textSize="48sp"
-        android:textColor="#FFFFFF"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="48dp"
+        android:padding="24dp"
+        android:background="@drawable/bg_card_surface"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:focusable="false"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/subtitle_text"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/stats_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stats_header_title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/ocean_text_on_dark" />
+
+        <LinearLayout
+            android:id="@+id/stats_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cpu_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cpu_usage"
+                    android:textColor="@color/ocean_muted_on_dark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cpu_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--%"
+                    android:textColor="@color/ocean_primary"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/gpu_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gpu_usage"
+                    android:textColor="@color/ocean_muted_on_dark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/gpu_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="N/A"
+                    android:textColor="@color/ocean_secondary"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mem_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/memory_usage"
+                    android:textColor="@color/ocean_muted_on_dark"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/mem_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="--%"
+                    android:textColor="@color/ocean_primary"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Actions Row -->
+    <LinearLayout
+        android:id="@+id/actions_row"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ready for rating screen integration"
-        android:textSize="24sp"
-        android:textColor="#CCCCCC"
         android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/header_stats_card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_text" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/btn_boost"
+            style="@style/TvActionButton"
+            android:text="@string/action_boost" />
+
+        <TextView
+            android:id="@+id/btn_clean"
+            style="@style/TvActionButton"
+            android:layout_marginStart="24dp"
+            android:text="@string/action_clean" />
+
+        <TextView
+            android:id="@+id/btn_optimize"
+            style="@style/TvActionButton"
+            android:layout_marginStart="24dp"
+            android:text="@string/action_optimize" />
+    </LinearLayout>
+
+    <!-- Games Grid Title -->
+    <TextView
+        android:id="@+id/games_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/games_title"
+        android:textColor="@color/ocean_text_on_dark"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/actions_row"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Games Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/games_grid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="32dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        android:descendantFocusability="afterDescendants"
+        app:layout_constraintTop_toBottomOf="@+id/games_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,8 +2,21 @@
 <resources>
     <!-- Base application theme for Android TV -->
     <style name="AppTheme" parent="Theme.Leanback">
-        <!-- Customize your theme here -->
         <item name="android:windowBackground">@color/tv_background</item>
         <item name="android:colorPrimary">@color/tv_accent</item>
+    </style>
+
+    <!-- Focusable TV Action Button -->
+    <style name="TvActionButton" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/ocean_text_on_dark</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:background">@drawable/bg_action_button</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
     </style>
 </resources>

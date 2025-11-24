@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">game_booster_frontend</string>
-    
-    <!-- Rating Screen Strings -->
-    <string name="rating_title">Did you like it?</string>
-    <string name="rating_message">Your vote helps us recommend more content like this.</string>
-    <string name="rating_like">I like it</string>
-    <string name="rating_love">I love it</string>
-    <string name="rating_dislike">I don\'t like it</string>
-    <string name="rating_close">Close</string>
-    <string name="rating_countdown">Closing in %d seconds</string>
+    <string name="app_name">Game Booster TV</string>
+
+    <!-- Stats Header -->
+    <string name="stats_header_title">System Status</string>
+    <string name="cpu_usage">CPU Usage</string>
+    <string name="gpu_usage">GPU Usage</string>
+    <string name="memory_usage">Memory Usage</string>
+
+    <!-- Actions -->
+    <string name="action_boost">Boost Performance</string>
+    <string name="action_clean">Clean Memory</string>
+    <string name="action_optimize">Optimize Network</string>
+
+    <!-- Games -->
+    <string name="games_title">Your Games</string>
+    <string name="game_tile_image_cd">Game artwork</string>
+
+    <!-- Feedback -->
+    <string name="feedback_boost_done">Boost applied: background cleanup and priority tune (placeholder)</string>
+    <string name="feedback_clean_done">Memory cleanup triggered (placeholder)</string>
+    <string name="feedback_optimize_done">Network optimizations applied (placeholder)</string>
 </resources>
